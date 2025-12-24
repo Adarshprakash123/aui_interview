@@ -156,7 +156,7 @@ NODE_ENV=production
 FRONTEND_URL=https://your-frontend-domain.com
 
 # MongoDB Atlas
-MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/ai_interviewer?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://REPLACE_WITH_USERNAME:REPLACE_WITH_PASSWORD@REPLACE_WITH_CLUSTER.mongodb.net/ai_interviewer?retryWrites=true&w=majority
 MONGODB_DB_NAME=ai_interviewer
 
 # OpenAI
