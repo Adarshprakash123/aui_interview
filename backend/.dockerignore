@@ -1,0 +1,10 @@
+node_modules
+temp
+.env
+*.log
+.git
+.gitignore
+.ebextensions
+README.md
+DEPLOYMENT.md
+
