@@ -81,7 +81,7 @@ Before deploying, ensure you have:
    - Driver: **Node.js**, Version: **5.5 or later**
    - Copy connection string:
      ```
-     mongodb+srv://ai-interviewer-user:<password>@ai-interviewer-cluster.xxxxx.mongodb.net/?retryWrites=true&w=majority
+     mongodb+srv://YOUR_USERNAME:<YOUR_PASSWORD>@YOUR_CLUSTER.mongodb.net/?retryWrites=true&w=majority
      ```
    - Replace `<password>` with your actual password
    - Add database name: `mongodb+srv://...mongodb.net/ai_interviewer?retryWrites=true&w=majority`
@@ -156,7 +156,7 @@ NODE_ENV=production
 FRONTEND_URL=https://your-frontend-domain.com
 
 # MongoDB Atlas
-MONGODB_URI=mongodb+srv://ai-interviewer-user:your_password@ai-interviewer-cluster.xxxxx.mongodb.net/ai_interviewer?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/ai_interviewer?retryWrites=true&w=majority
 MONGODB_DB_NAME=ai_interviewer
 
 # OpenAI

@@ -121,7 +121,7 @@ Add these in **Hostinger hPanel → Node.js App → Environment Variables**:
 PORT=8080
 NODE_ENV=production
 FRONTEND_URL=https://your-frontend-domain.com
-MONGODB_URI=mongodb+srv://user:password@cluster.mongodb.net/ai_interviewer?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/ai_interviewer?retryWrites=true&w=majority
 MONGODB_DB_NAME=ai_interviewer
 OPENAI_API_KEY=sk-your-openai-api-key
 LIVEKIT_URL=wss://your-project.livekit.cloud
