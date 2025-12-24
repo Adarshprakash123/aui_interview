@@ -126,7 +126,7 @@ eb setenv \
   LIVEKIT_URL="wss://your-livekit-server.com" \
   LIVEKIT_API_KEY="your_livekit_key" \
   LIVEKIT_API_SECRET="your_livekit_secret" \
-  MONGODB_URI="mongodb+srv://user:pass@cluster.mongodb.net/ai_interviewer" \
+  MONGODB_URI="mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/ai_interviewer" \
   MONGODB_DB_NAME="ai_interviewer" \
   PORT=8080 \
   NODE_ENV=production
@@ -181,14 +181,14 @@ Copy the **CNAME** URL (e.g., `ai-video-interviewer-prod.elasticbeanstalk.com`)
 3. Driver: **Node.js**, Version: **5.5 or later**
 4. Copy connection string:
    ```
-   mongodb+srv://ai-interviewer-user:<password>@ai-interviewer-cluster.xxxxx.mongodb.net/?retryWrites=true&w=majority
+   mongodb+srv://YOUR_USERNAME:<YOUR_PASSWORD>@YOUR_CLUSTER.mongodb.net/?retryWrites=true&w=majority
    ```
 5. Replace `<password>` with your actual password
 6. Add database name: `mongodb+srv://...mongodb.net/ai_interviewer?retryWrites=true&w=majority`
 
 ### Step 6: Update Backend Environment Variable
 ```bash
-eb setenv MONGODB_URI="mongodb+srv://user:pass@cluster.mongodb.net/ai_interviewer?retryWrites=true&w=majority"
+eb setenv MONGODB_URI="mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/ai_interviewer?retryWrites=true&w=majority"
 ```
 
 ---

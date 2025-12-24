@@ -61,7 +61,7 @@ OPENAI_API_KEY=your_openai_key
 LIVEKIT_URL=wss://your-project.livekit.cloud
 LIVEKIT_API_KEY=your_livekit_key
 LIVEKIT_API_SECRET=your_livekit_secret
-MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/ai_interviewer
+MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/ai_interviewer
 MONGODB_DB_NAME=ai_interviewer
 FRONTEND_URL=https://your-frontend-url.com
 ```
@@ -120,7 +120,7 @@ OPENAI_API_KEY=your_openai_key
 LIVEKIT_URL=wss://your-project.livekit.cloud
 LIVEKIT_API_KEY=your_livekit_key
 LIVEKIT_API_SECRET=your_livekit_secret
-MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/ai_interviewer
+MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/ai_interviewer
 MONGODB_DB_NAME=ai_interviewer
 FRONTEND_URL=https://your-frontend-url.com
 ```
@@ -186,7 +186,7 @@ fly secrets set \
   LIVEKIT_URL=wss://your-livekit-server.com \
   LIVEKIT_API_KEY=your_livekit_key \
   LIVEKIT_API_SECRET=your_livekit_secret \
-  MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/ai_interviewer \
+  MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/ai_interviewer \
   MONGODB_DB_NAME=ai_interviewer \
   FRONTEND_URL=https://your-frontend-url.com
 ```
@@ -367,7 +367,7 @@ heroku config:set \
   LIVEKIT_URL=wss://your-livekit-server.com \
   LIVEKIT_API_KEY=your_livekit_key \
   LIVEKIT_API_SECRET=your_livekit_secret \
-  MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/ai_interviewer \
+  MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/ai_interviewer \
   MONGODB_DB_NAME=ai_interviewer \
   FRONTEND_URL=https://your-frontend-url.com
 ```
