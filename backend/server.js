@@ -17,9 +17,19 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
+// Add error logging for better debugging
+process.on('uncaughtException', err => {
+  console.error('Uncaught Exception:', err);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+});
+
 const app = express();
-// Hostinger will set PORT automatically - do not use fallback
-const PORT = process.env.PORT;
+// PORT with fallback - Hostinger should set this, but fallback to 3000 if not
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 // CORS configuration - production-safe
@@ -70,13 +80,12 @@ app.get('/health', (req, res) => {
 });
 
 // Start server
-if (!PORT) {
-  console.error('ERROR: PORT environment variable is not set');
-  process.exit(1);
-}
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`Frontend URL: ${process.env.FRONTEND_URL || 'Not set'}`);
+}).on('error', (err) => {
+  console.error('Failed to start server:', err);
+  process.exit(1);
 });
 
