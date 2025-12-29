@@ -39,18 +39,31 @@ const allowedOrigins = process.env.FRONTEND_URL
 
 app.use(cors({
   origin: function (origin, callback) {
+    // Log for debugging
+    console.log('CORS check - Origin:', origin);
+    console.log('CORS check - Allowed origins:', allowedOrigins);
+    console.log('CORS check - NODE_ENV:', process.env.NODE_ENV);
+    
     // In production, require FRONTEND_URL to be set
     if (process.env.NODE_ENV === 'production') {
       if (!process.env.FRONTEND_URL) {
+        console.error('ERROR: FRONTEND_URL environment variable must be set in production');
         return callback(new Error('FRONTEND_URL environment variable must be set in production'));
       }
-      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      // Allow requests with no origin (like Postman, curl)
+      if (!origin) {
+        return callback(null, true);
+      }
+      // Check if origin is in allowed list
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        console.log('CORS: Allowed origin:', origin);
         callback(null, true);
       } else {
+        console.error('CORS: Blocked origin:', origin, 'Not in allowed list:', allowedOrigins);
         callback(new Error('Not allowed by CORS'));
       }
     } else {
-      // Development: allow localhost
+      // Development: allow localhost and allowed origins
       if (!origin || allowedOrigins.indexOf(origin) !== -1 || origin.includes('localhost')) {
         callback(null, true);
       } else {
