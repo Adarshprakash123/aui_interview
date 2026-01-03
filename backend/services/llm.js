@@ -51,7 +51,9 @@ Return ONLY valid JSON, no additional text.`;
         }
       ],
       temperature: 0.3,
-      response_format: { type: 'json_object' }
+      response_format: { type: 'json_object' },
+      timeout: 30000, // 30 second timeout
+      max_tokens: 1000 // Limit response size
     });
 
     const content = response.choices[0].message.content;
