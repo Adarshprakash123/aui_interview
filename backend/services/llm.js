@@ -38,6 +38,7 @@ ${resumeText.substring(0, 8000)} // Limit to avoid token limits
 
 Return ONLY valid JSON, no additional text.`;
 
+    console.log('Calling OpenAI API for resume analysis...');
     const response = await getOpenAIClient().chat.completions.create({
       model: 'gpt-4o-mini',
       messages: [
@@ -52,9 +53,10 @@ Return ONLY valid JSON, no additional text.`;
       ],
       temperature: 0.3,
       response_format: { type: 'json_object' },
-      timeout: 30000, // 30 second timeout
-      max_tokens: 1000 // Limit response size
+      max_tokens: 1000 // Limit response size for faster processing
     });
+    
+    console.log('OpenAI API response received');
 
     const content = response.choices[0].message.content;
     const resumeData = JSON.parse(content);
